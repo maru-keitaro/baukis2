@@ -1,3 +1,13 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  namespace :staff do  # 職員
+    root "top#index"
+  end
+
+  namespace :admin do  # 管理者
+    root "top#index"
+  end
+
+  namespace :customer do  # 顧客
+    root "top#index"
+  end
 end
