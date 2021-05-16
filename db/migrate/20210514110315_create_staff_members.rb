@@ -14,7 +14,7 @@ class CreateStaffMembers < ActiveRecord::Migration[6.1]
       t.timestamps
     end
 
-    add_index :staff_members, "LOWER(email)", unique: true
-    add_index :staff_members, [ :family_name_kana, :given_name_kana ]
+    add_index :staff_members, :email, unique: true # LOWERは大文字のアルファベットを小文字のアルファベットに変換、カラムemailにunique制約(一意性制約)
+    add_index :staff_members, [ :family_name_kana, :given_name_kana]
   end
 end
